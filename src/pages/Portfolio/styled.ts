@@ -2,7 +2,6 @@ import styled, { keyframes } from 'styled-components';
 
 export const MainDiv = styled.div`
   display: flex;
-  flex-flow: column wrap;
   justify-content: center;
   align-items: center;
   gap: 8rem;
@@ -15,8 +14,6 @@ export const MainDiv = styled.div`
 `;
 
 export const HeroSection = styled.div`
-  line-height: 1;
-
   p {
     font-family: 'Abril Fatface';
     color: ${({ theme }) => theme.colors.lightOrange};
@@ -24,15 +21,43 @@ export const HeroSection = styled.div`
   }
 `;
 
-export const AboutMe = styled.div``;
+export const AboutMe = styled.div`
+  margin-top: 6rem;
+`;
+
+export const SocialDiv = styled.div`
+  display: flex;
+  flex-flow: column wrap;
+  gap: 3rem;
+`;
+
+export const ButtonIcon = styled.div`
+  background-color: ${({ theme }) => theme.colors.orange};
+  border-radius: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 2rem;
+  transition: 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-0.5rem);
+    color: ${({ theme }) => theme.colors.brown};
+    box-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.1),
+      0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+`;
 
 export const StackDiv = styled.div`
-  background-color: ${({ theme }) => theme.colors.brown};
+  background-color: #332822;
   box-shadow:
     0 4px 8px rgba(0, 0, 0, 0.1),
     0 6px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  padding: 3rem 0;
+  padding: 2.3rem 0;
   white-space: nowrap;
 `;
 
@@ -49,8 +74,6 @@ export const Marquee = styled.div`
   display: inline-block;
   width: 100%;
   animation: 10s ${marquee} infinite linear;
-  align-items: center;
-  gap: 13rem;
   border-radius: 0.5rem;
 
   img {
@@ -58,6 +81,8 @@ export const Marquee = styled.div`
     height: 5rem;
   }
 `;
+
+export const ProjectsSection = styled.div``;
 
 export const H1 = styled.h1`
   font-size: 10rem;
