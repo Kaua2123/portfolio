@@ -15,8 +15,8 @@ html {
 
 body {
     font-size: 1.7rem;
-    line-height: 1.5;
     background: linear-gradient(#C8835D, #62402E);
+    line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5, h6 {
