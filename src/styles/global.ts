@@ -52,5 +52,28 @@ a {
     text-decoration: none;
 }
 
+button {
+    font-family: 'Rowdies' sans-serif;
+    font-weight: 850;
+    font-style: normal;
+    font-size: 2rem;
+    background-color: ${({ theme }) => theme.colors.darkerBrown};
+    color: ${({ theme }) => theme.colors.white};
+    border: none;
+    padding: 2rem;
+    border-radius: 0.4rem;
+    width: 25rem;
+    transition: 0.1s;
+    cursor: pointer;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        color: ${({ theme }) => theme.colors.lightBrown};
+    }
+}
+
 
 `;
