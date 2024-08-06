@@ -130,8 +130,9 @@ export const DivContactMe = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
-  padding: 0 10rem;
+  padding: 0 15rem;
 
   .email {
     background-color: #feddca;

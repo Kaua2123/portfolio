@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import {
   AboutMe,
   ButtonIcon,
@@ -29,6 +31,23 @@ import dockerLogo from '../../assets/logo-docker.svg';
 import curriculo from '../../assets/curriculo.pdf';
 
 export default function Portfolio() {
+  const [isCopied, setIsCopied] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard
+      .writeText('kauapaixao37@gmail.com')
+      .then(() => {
+        setIsCopied(true);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 1000);
+  };
+
   return (
     <div>
       <Div>
@@ -152,11 +171,13 @@ export default function Portfolio() {
             <DivContactMe>
               <div className="text-div">
                 <Mail size={80} color="white" />
-                <h3>Fale comigo!</h3>
+                <h2>Fale comigo!</h2>
               </div>
               <div>
                 <div className="email">kauapaixao37@gmail.com</div>
-                <button className="button-one">COPIAR EMAIL</button>
+                <button className="button-one" onClick={copyEmail}>
+                  {isCopied ? 'EMAIL COPIADO' : 'COPIAR EMAIL'}
+                </button>
               </div>
             </DivContactMe>
           </div>
