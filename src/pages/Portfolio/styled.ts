@@ -5,7 +5,7 @@ export const MainDiv = styled.div`
   justify-content: center;
   align-items: center;
   gap: 8rem;
-  background: linear-gradient(#c8835d, #62402e);
+  scroll-behavior: smooth;
 
   .about-me-paragraph {
     font-family: 'Abril Fatface';
@@ -53,10 +53,7 @@ export const ButtonIcon = styled.div`
 `;
 
 export const StackDiv = styled.div`
-  background-color: #332822;
-  box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.1),
-    0 6px 20px rgba(0, 0, 0, 0.1);
+  background-color: inherit;
   overflow: hidden;
   padding: 2.3rem 0;
   white-space: nowrap;
@@ -69,17 +66,21 @@ export const marquee = keyframes`
 
 export const Div = styled.div`
   background: linear-gradient(#c8835d, #62402e);
+  scroll-behavior: smooth;
+
+  .gradient {
+    background: linear-gradient(#c8835d, #62402e);
+  }
 `;
 
 export const Marquee = styled.div`
   display: inline-block;
   width: 100%;
-  animation: 10s ${marquee} infinite linear;
-  border-radius: 0.5rem;
+  animation: 25s ${marquee} infinite linear;
 
   img {
     margin: 0 6rem;
-    height: 5rem;
+    height: 6rem;
   }
 `;
 

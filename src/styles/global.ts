@@ -75,6 +75,7 @@ a {
 
     &:hover {
         color: ${({ theme }) => theme.colors.lightBrown};
+        opacity: 0.8;
     }
 }
 
@@ -89,9 +90,8 @@ a {
     background-color: ${({ theme }) => theme.colors.darkBrown};
     color: ${({ theme }) => theme.colors.white};
     border: none;
-    padding: 2rem;
-    border-radius: 2rem;
-    width: 25rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
     transition: 0.1s;
     cursor: pointer;
     display: flex;
@@ -100,7 +100,7 @@ a {
     align-items: center;
 
     &:hover {
-        color: ${({ theme }) => theme.colors.lightBrown};
+        opacity: 0.8;
     }
 }
 

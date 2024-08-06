@@ -29,6 +29,7 @@ import expressLogo from '../../assets/logo-express.svg';
 import mysqlLogo from '../../assets/logo-mysql.svg';
 import dockerLogo from '../../assets/logo-docker.svg';
 import curriculo from '../../assets/curriculo.pdf';
+import Navbar from '../../components/Navbar/Navbar';
 
 export default function Portfolio() {
   const [isCopied, setIsCopied] = useState(false);
@@ -50,79 +51,82 @@ export default function Portfolio() {
 
   return (
     <div>
+      <Navbar />
       <Div>
-        <MainDiv className="section">
-          <HeroSection>
-            <div style={{ lineHeight: '1' }}>
-              <p>Olá! 👋 Me chamo Kauã e sou</p>
-              <H1>
-                FULLSTACK
-                <br /> DEVELOPER
-              </H1>
-            </div>
-            <AboutMe>
-              <p className="about-me-paragraph">
-                Sou um desenvolvedor fullstack empenhado em trazer
-                <br /> soluções robustas e inovadoras com interfaces limpas
-                <br /> e intuitivas.
-              </p>
-            </AboutMe>
-          </HeroSection>
-          <SocialDiv>
-            <a href={curriculo} download={'curriculo.pdf'}>
-              <ButtonIcon>
-                <FileText size={'4rem'} />
-              </ButtonIcon>
-            </a>
+        <div className="gradient">
+          <MainDiv className="section">
+            <HeroSection>
+              <div style={{ lineHeight: '1' }}>
+                <p>Olá! 👋 Me chamo Kauã e sou</p>
+                <H1>
+                  FULLSTACK
+                  <br /> DEVELOPER
+                </H1>
+              </div>
+              <AboutMe>
+                <p className="about-me-paragraph">
+                  Sou um desenvolvedor fullstack empenhado em trazer
+                  <br /> soluções robustas e inovadoras com interfaces limpas
+                  <br /> e intuitivas.
+                </p>
+              </AboutMe>
+            </HeroSection>
+            <SocialDiv>
+              <a href={curriculo} download={'curriculo.pdf'}>
+                <ButtonIcon>
+                  <FileText size={'4rem'} />
+                </ButtonIcon>
+              </a>
 
-            <a
-              href="https://www.linkedin.com/in/kaua-paixao/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <ButtonIcon>
-                <Linkedin size={'4rem'} />
-              </ButtonIcon>
-            </a>
+              <a
+                href="https://www.linkedin.com/in/kaua-paixao/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ButtonIcon>
+                  <Linkedin size={'4rem'} />
+                </ButtonIcon>
+              </a>
 
-            <a
-              href="https://github.com/Kaua2123"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <ButtonIcon>
-                <Github size={'4rem'} />
-              </ButtonIcon>
-            </a>
-          </SocialDiv>
-        </MainDiv>
+              <a
+                href="https://github.com/Kaua2123"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ButtonIcon>
+                  <Github size={'4rem'} />
+                </ButtonIcon>
+              </a>
+            </SocialDiv>
+          </MainDiv>
 
-        <StackDiv>
-          <Marquee>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <img src={javascriptLogo} alt="" />
-              <img src={typescriptLogo} alt="" />
-              <img src={reactLogo} alt="" />
-              <img src={nodejsLogo} alt="" />
-              <img src={nestjsLogo} alt="" />
-              <img src={expressLogo} alt="" />
-              <img src={mysqlLogo} alt="" />
-              <img src={dockerLogo} alt="" />
-            </div>
-          </Marquee>
-          <Marquee>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <img src={javascriptLogo} alt="" />
-              <img src={typescriptLogo} alt="" />
-              <img src={reactLogo} alt="" />
-              <img src={nodejsLogo} alt="" />
-              <img src={nestjsLogo} alt="" />
-              <img src={expressLogo} alt="" />
-              <img src={mysqlLogo} alt="" />
-              <img src={dockerLogo} alt="" />
-            </div>
-          </Marquee>
-        </StackDiv>
+          <StackDiv>
+            <Marquee>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <img src={javascriptLogo} alt="" />
+                <img src={typescriptLogo} alt="" />
+                <img src={reactLogo} alt="" />
+                <img src={nodejsLogo} alt="" />
+                <img src={nestjsLogo} alt="" />
+                <img src={expressLogo} alt="" />
+                <img src={mysqlLogo} alt="" />
+                <img src={dockerLogo} alt="" />
+              </div>
+            </Marquee>
+            <Marquee>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <img src={javascriptLogo} alt="" />
+                <img src={typescriptLogo} alt="" />
+                <img src={reactLogo} alt="" />
+                <img src={nodejsLogo} alt="" />
+                <img src={nestjsLogo} alt="" />
+                <img src={expressLogo} alt="" />
+                <img src={mysqlLogo} alt="" />
+                <img src={dockerLogo} alt="" />
+              </div>
+            </Marquee>
+          </StackDiv>
+        </div>
 
         <ProjectsSection className="section">
           <H1>PROJETOS</H1>
