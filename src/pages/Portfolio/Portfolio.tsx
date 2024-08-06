@@ -128,7 +128,7 @@ export default function Portfolio() {
           </StackDiv>
         </div>
 
-        <ProjectsSection className="section">
+        <ProjectsSection className="section" id="projects">
           <H1>PROJETOS</H1>
           <div
             style={{ display: 'flex', flexFlow: 'column nowrap', gap: '20rem' }}

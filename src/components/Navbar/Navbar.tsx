@@ -1,5 +1,7 @@
 import { Div } from './styled';
 
+import curriculo from '../../assets/curriculo.pdf';
+
 export default function Navbar() {
   return (
     <div>
@@ -11,11 +13,15 @@ export default function Navbar() {
           <a href="#">
             <p>INTRO</p>
           </a>
-          <p>PROJETOS</p>
+          <a href="#projects">
+            <p>PROJETOS</p>
+          </a>
           <p>SOBRE</p>
         </div>
         <div>
-          <button className="button-two">Baixar currículo</button>
+          <a href={curriculo} download={'curriculo.pdf'}>
+            <button className="button-two">Baixar currículo</button>
+          </a>
         </div>
       </Div>
     </div>
