@@ -5,6 +5,7 @@ export const MainDiv = styled.div`
   justify-content: center;
   align-items: center;
   gap: 8rem;
+  background: linear-gradient(#c8835d, #62402e);
 
   .about-me-paragraph {
     font-family: 'Abril Fatface';
@@ -66,9 +67,7 @@ export const marquee = keyframes`
   100% {transform: translateX(-100%)}
 `;
 
-export const Div = styled.div`
-  background: linear-gradient(#c8835d, #62402e);
-`;
+export const Div = styled.div``;
 
 export const Marquee = styled.div`
   display: inline-block;
@@ -82,7 +81,32 @@ export const Marquee = styled.div`
   }
 `;
 
-export const ProjectsSection = styled.div``;
+export const ProjectsSection = styled.div`
+  margin: 5rem 10rem;
+
+  h1 {
+    text-align: end;
+    margin-bottom: 10rem;
+  }
+`;
+
+export const Project = styled.div`
+  display: flex;
+  gap: 10rem;
+  align-items: center;
+`;
+
+export const ProjectCard = styled.div`
+  width: 55%;
+  background-color: ${({ theme }) => theme.colors.white};
+  height: 39rem;
+  border-radius: 5.4rem;
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 6px 20px rgba(0, 0, 0, 0.1);
+`;
+
+export const ProjectInfo = styled.div``;
 
 export const H1 = styled.h1`
   font-size: 10rem;

@@ -15,7 +15,8 @@ html {
 
 body {
     font-size: 1.7rem;
-    background: linear-gradient(#C8835D, #62402E);
+    background: ${({ theme }) => theme.colors.brown};
+    background: linear-gradient(to bottom, ${({ theme }) => theme.colors.orange}, ${({ theme }) => theme.colors.brown});
     line-height: 1.5;
 }
 
@@ -52,7 +53,10 @@ a {
     text-decoration: none;
 }
 
-button {
+.button-one {
+    box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 6px 20px rgba(0, 0, 0, 0.1);
     font-family: 'Rowdies' sans-serif;
     font-weight: 850;
     font-style: normal;
@@ -75,8 +79,35 @@ button {
     }
 }
 
+.button-two {
+    box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 6px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Rowdies' sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2rem;
+    background-color: ${({ theme }) => theme.colors.darkBrown};
+    color: ${({ theme }) => theme.colors.white};
+    border: none;
+    padding: 2rem;
+    border-radius: 2rem;
+    width: 25rem;
+    transition: 0.1s;
+    cursor: pointer;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        color: ${({ theme }) => theme.colors.lightBrown};
+    }
+}
+
+
 .section {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 `;

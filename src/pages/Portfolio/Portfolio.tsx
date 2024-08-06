@@ -6,6 +6,9 @@ import {
   HeroSection,
   MainDiv,
   Marquee,
+  Project,
+  ProjectCard,
+  ProjectInfo,
   ProjectsSection,
   SocialDiv,
   StackDiv,
@@ -21,6 +24,7 @@ import nestjsLogo from '../../assets/logo-nestjs.svg';
 import expressLogo from '../../assets/logo-express.svg';
 import mysqlLogo from '../../assets/logo-mysql.svg';
 import dockerLogo from '../../assets/logo-docker.svg';
+import curriculo from '../../assets/curriculo.pdf';
 
 export default function Portfolio() {
   return (
@@ -44,11 +48,12 @@ export default function Portfolio() {
             </AboutMe>
           </HeroSection>
           <SocialDiv>
-            <a>
+            <a href={curriculo} download={'curriculo.pdf'}>
               <ButtonIcon>
                 <FileText size={'4rem'} />
               </ButtonIcon>
             </a>
+
             <a
               href="https://www.linkedin.com/in/kaua-paixao/"
               target="_blank"
@@ -100,6 +105,39 @@ export default function Portfolio() {
 
         <ProjectsSection className="section">
           <H1>PROJETOS</H1>
+          <div
+            style={{ display: 'flex', flexFlow: 'column nowrap', gap: '20rem' }}
+          >
+            <Project>
+              <ProjectCard></ProjectCard>
+              <ProjectInfo>
+                <h2>Chathub</h2>
+                <h6>Aplicação de bate papo em tempo real</h6>
+
+                <div
+                  style={{ display: 'flex', gap: '2rem', marginTop: '5rem' }}
+                >
+                  <button className="button-two">Repositório</button>
+                  <button className="button-two">Visitar</button>
+                </div>
+              </ProjectInfo>
+            </Project>
+
+            <Project>
+              <ProjectInfo>
+                <h2>Social Blog</h2>
+                <h6>Aplicação de blog / rede social </h6>
+
+                <div
+                  style={{ display: 'flex', gap: '2rem', marginTop: '5rem' }}
+                >
+                  <button className="button-two">Repositório</button>
+                  <button className="button-two">Visitar</button>
+                </div>
+              </ProjectInfo>
+              <ProjectCard></ProjectCard>
+            </Project>
+          </div>
         </ProjectsSection>
       </Div>
     </div>
