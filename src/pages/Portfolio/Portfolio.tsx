@@ -31,7 +31,7 @@ import expressLogo from '../../assets/logo-express.svg';
 import mysqlLogo from '../../assets/logo-mysql.svg';
 import dockerLogo from '../../assets/logo-docker.svg';
 import curriculo from '../../assets/curriculo.pdf';
-import chathubHome from '../../assets/chathub-home.jpg';
+import chathubPreview from '../../assets/chathub_preview.png';
 import socialblogHome from '../../assets/socialblog-home.jpg';
 
 export default function Portfolio() {
@@ -138,7 +138,7 @@ export default function Portfolio() {
           >
             <Project>
               <ProjectCard>
-                <img src={chathubHome} alt="" />
+                <img src={chathubPreview} alt="" />
               </ProjectCard>
               <ProjectInfo>
                 <h2>Chathub</h2>

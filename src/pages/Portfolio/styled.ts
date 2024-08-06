@@ -111,12 +111,8 @@ export const Project = styled.div`
 
 export const ProjectCard = styled.div`
   width: 55%;
-  background-color: ${({ theme }) => theme.colors.white};
   height: 39rem;
-  border-radius: 2.5rem;
-  box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.1),
-    0 6px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
 
   img {
     width: 100%;
