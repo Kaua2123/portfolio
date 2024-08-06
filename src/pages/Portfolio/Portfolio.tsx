@@ -20,6 +20,8 @@ import {
 
 import { FileText, Linkedin, Github, Mail } from 'lucide-react';
 
+import Navbar from '../../components/Navbar/Navbar';
+
 import javascriptLogo from '../../assets/logo-javascript.svg';
 import typescriptLogo from '../../assets/logo-typescript.svg';
 import reactLogo from '../../assets/logo-react.svg';
@@ -29,7 +31,8 @@ import expressLogo from '../../assets/logo-express.svg';
 import mysqlLogo from '../../assets/logo-mysql.svg';
 import dockerLogo from '../../assets/logo-docker.svg';
 import curriculo from '../../assets/curriculo.pdf';
-import Navbar from '../../components/Navbar/Navbar';
+import chathubHome from '../../assets/chathub-home.jpg';
+import socialblogHome from '../../assets/socialblog-home.jpg';
 
 export default function Portfolio() {
   const [isCopied, setIsCopied] = useState(false);
@@ -134,7 +137,9 @@ export default function Portfolio() {
             style={{ display: 'flex', flexFlow: 'column nowrap', gap: '20rem' }}
           >
             <Project>
-              <ProjectCard></ProjectCard>
+              <ProjectCard>
+                <img src={chathubHome} alt="" />
+              </ProjectCard>
               <ProjectInfo>
                 <h2>Chathub</h2>
                 <h6>Aplicação de bate papo em tempo real</h6>
@@ -142,8 +147,20 @@ export default function Portfolio() {
                 <div
                   style={{ display: 'flex', gap: '2rem', marginTop: '5rem' }}
                 >
-                  <button className="button-one">REPOSITÓRIO</button>
-                  <button className="button-one">VISITAR</button>
+                  <a
+                    href="https://github.com/Kaua2123/chathub-client"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <button className="button-one">REPOSITÓRIO</button>
+                  </a>
+                  <a
+                    href="https://chathub-client.vercel.app/"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <button className="button-one">VISITAR</button>
+                  </a>
                 </div>
               </ProjectInfo>
             </Project>
@@ -156,11 +173,26 @@ export default function Portfolio() {
                 <div
                   style={{ display: 'flex', gap: '2rem', marginTop: '5rem' }}
                 >
-                  <button className="button-one">REPOSITÓRIO</button>
-                  <button className="button-one">VISITAR</button>
+                  <a
+                    href="https://github.com/Kaua2123/social-blog"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <button className="button-one">REPOSITÓRIO</button>
+                  </a>
+
+                  <a
+                    href="https://social-blog-theta.vercel.app/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <button className="button-one">VISITAR</button>
+                  </a>
                 </div>
               </ProjectInfo>
-              <ProjectCard></ProjectCard>
+              <ProjectCard>
+                <img src={socialblogHome} alt="" />
+              </ProjectCard>
             </Project>
           </div>
         </ProjectsSection>

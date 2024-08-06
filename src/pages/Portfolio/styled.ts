@@ -113,10 +113,16 @@ export const ProjectCard = styled.div`
   width: 55%;
   background-color: ${({ theme }) => theme.colors.white};
   height: 39rem;
-  border-radius: 5.4rem;
+  border-radius: 2.5rem;
   box-shadow:
     0 4px 8px rgba(0, 0, 0, 0.1),
     0 6px 20px rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+  }
 `;
 
 export const ProjectInfo = styled.div``;
