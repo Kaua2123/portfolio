@@ -16,7 +16,7 @@ html {
 body {
     font-size: 1.7rem;
     background: ${({ theme }) => theme.colors.brown};
-    background: linear-gradient(to bottom, ${({ theme }) => theme.colors.orange}, ${({ theme }) => theme.colors.brown});
+    background: linear-gradient(${({ theme }) => theme.colors.lightBrown}, ${({ theme }) => theme.colors.brown} );
     line-height: 1.5;
 }
 
@@ -58,8 +58,7 @@ a {
     0 4px 8px rgba(0, 0, 0, 0.1),
     0 6px 20px rgba(0, 0, 0, 0.1);
     font-family: 'Rowdies' sans-serif;
-    font-weight: 850;
-    font-style: normal;
+    font-weight: bold;
     font-size: 2rem;
     background-color: ${({ theme }) => theme.colors.darkerBrown};
     color: ${({ theme }) => theme.colors.white};
@@ -84,7 +83,7 @@ a {
     0 4px 8px rgba(0, 0, 0, 0.1),
     0 6px 20px rgba(0, 0, 0, 0.1);
     font-family: 'Rowdies' sans-serif;
-    font-weight: 700;
+    font-weight: bold;
     font-style: normal;
     font-size: 2rem;
     background-color: ${({ theme }) => theme.colors.darkBrown};

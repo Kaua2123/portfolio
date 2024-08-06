@@ -1,7 +1,9 @@
 import {
   AboutMe,
   ButtonIcon,
+  ContactMeSection,
   Div,
+  DivContactMe,
   H1,
   HeroSection,
   MainDiv,
@@ -14,7 +16,7 @@ import {
   StackDiv,
 } from './styled';
 
-import { FileText, Linkedin, Github } from 'lucide-react';
+import { FileText, Linkedin, Github, Mail } from 'lucide-react';
 
 import javascriptLogo from '../../assets/logo-javascript.svg';
 import typescriptLogo from '../../assets/logo-typescript.svg';
@@ -117,8 +119,8 @@ export default function Portfolio() {
                 <div
                   style={{ display: 'flex', gap: '2rem', marginTop: '5rem' }}
                 >
-                  <button className="button-two">Repositório</button>
-                  <button className="button-two">Visitar</button>
+                  <button className="button-one">REPOSITÓRIO</button>
+                  <button className="button-one">VISITAR</button>
                 </div>
               </ProjectInfo>
             </Project>
@@ -131,14 +133,34 @@ export default function Portfolio() {
                 <div
                   style={{ display: 'flex', gap: '2rem', marginTop: '5rem' }}
                 >
-                  <button className="button-two">Repositório</button>
-                  <button className="button-two">Visitar</button>
+                  <button className="button-one">REPOSITÓRIO</button>
+                  <button className="button-one">VISITAR</button>
                 </div>
               </ProjectInfo>
               <ProjectCard></ProjectCard>
             </Project>
           </div>
         </ProjectsSection>
+
+        <ContactMeSection>
+          <div
+            style={{
+              display: 'flex',
+              padding: '5rem',
+            }}
+          >
+            <DivContactMe>
+              <div className="text-div">
+                <Mail size={80} color="white" />
+                <h3>Fale comigo!</h3>
+              </div>
+              <div>
+                <div className="email">kauapaixao37@gmail.com</div>
+                <button className="button-one">COPIAR EMAIL</button>
+              </div>
+            </DivContactMe>
+          </div>
+        </ContactMeSection>
       </Div>
     </div>
   );

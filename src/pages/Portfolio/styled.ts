@@ -67,7 +67,9 @@ export const marquee = keyframes`
   100% {transform: translateX(-100%)}
 `;
 
-export const Div = styled.div``;
+export const Div = styled.div`
+  background: linear-gradient(#c8835d, #62402e);
+`;
 
 export const Marquee = styled.div`
   display: inline-block;
@@ -87,6 +89,16 @@ export const ProjectsSection = styled.div`
   h1 {
     text-align: end;
     margin-bottom: 10rem;
+    text-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.1),
+      0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  h2,
+  h6 {
+    text-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.1),
+      0 6px 20px rgba(0, 0, 0, 0.1);
   }
 `;
 
@@ -107,6 +119,40 @@ export const ProjectCard = styled.div`
 `;
 
 export const ProjectInfo = styled.div``;
+
+export const ContactMeSection = styled.div`
+  margin-top: 20rem;
+  min-height: 30vh;
+  background-color: ${({ theme }) => theme.colors.darkBrown};
+`;
+
+export const DivContactMe = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 10rem;
+
+  .email {
+    background-color: #feddca;
+    color: #000;
+    font-weight: bold;
+    font-family: Rowdies;
+    padding: 2rem;
+    width: 25rem;
+    border-radius: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-div {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+  }
+`;
 
 export const H1 = styled.h1`
   font-size: 10rem;
