@@ -17,7 +17,6 @@ import {
   ProjectCard,
   ProjectInfo,
   ProjectsSection,
-  ServiceName,
   SocialDiv,
   StackDiv,
 } from './styled';
