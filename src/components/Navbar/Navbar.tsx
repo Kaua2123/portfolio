@@ -16,7 +16,10 @@ export default function Navbar() {
           <a href="#projects">
             <p>PROJETOS</p>
           </a>
-          <p>SOBRE</p>
+
+          <a href="#about-me">
+            <p>SOBRE</p>
+          </a>
         </div>
         <div>
           <a href={curriculo} download={'curriculo.pdf'}>

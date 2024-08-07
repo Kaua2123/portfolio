@@ -1,5 +1,24 @@
 import styled, { keyframes } from 'styled-components';
 
+export const ButtonReturnToTop = styled.button`
+  background-color: ${({ theme }) => theme.colors.white};
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 5rem;
+  border: none;
+  border-radius: 3rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: 0.1s;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.brown};
+    color: ${({ theme }) => theme.colors.white};
+    transform: scale(1.1);
+  }
+`;
+
 export const MainDiv = styled.div`
   display: flex;
   justify-content: center;
@@ -176,4 +195,70 @@ export const DivContactMe = styled.div`
 
 export const H1 = styled.h1`
   font-size: 10rem;
+`;
+
+export const AboutMeSection = styled.div`
+  margin: 15rem 10rem;
+
+  .text {
+    margin-top: 6rem;
+    padding: 6rem;
+    background-color: ${({ theme }) => theme.colors.brown};
+    border-radius: 1.5rem;
+  }
+
+  .my-services {
+    margin-top: 6rem;
+
+    ul {
+      padding-left: 6rem;
+      margin-top: 4rem;
+
+      li {
+        color: white;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  p {
+    color: white;
+    font-family: Rowdies;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 1.8rem;
+  }
+`;
+
+export const GridMyServices = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5rem;
+
+  div {
+    background-color: ${({ theme }) => theme.colors.brown};
+    border-radius: 2rem;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin-top: 5rem;
+    padding: 5rem;
+    gap: 5rem;
+    transition: 0.4s;
+
+    &:hover {
+      transform: translateY(-2%);
+    }
+
+    .service-name {
+      font-size: 2.2rem;
+      font-family: Rowdies;
+    }
+
+    .service-description {
+      font-family: Rowdies, sans-serif;
+      font-weight: 300;
+      font-style: normal;
+    }
+  }
 `;

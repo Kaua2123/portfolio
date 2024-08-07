@@ -21,7 +21,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Abril Fatface regular';
+    font-family: 'Abril Fatface';
+    font-weight: normal;
     color: ${({ theme }) => theme.colors.white};
 }
 
@@ -74,8 +75,9 @@ a {
     align-items: center;
 
     &:hover {
-        opacity: 0.8;
-        transform: translateY(-5%);
+        background-color: ${({ theme }) => theme.colors.darkBrown}; 
+        transform: translateY(-3%);
+
     }
 }
 

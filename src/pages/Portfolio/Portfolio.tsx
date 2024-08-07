@@ -2,10 +2,13 @@ import { useState } from 'react';
 
 import {
   AboutMe,
+  AboutMeSection,
   ButtonIcon,
+  ButtonReturnToTop,
   ContactMeSection,
   Div,
   DivContactMe,
+  GridMyServices,
   H1,
   HeroSection,
   MainDiv,
@@ -14,11 +17,12 @@ import {
   ProjectCard,
   ProjectInfo,
   ProjectsSection,
+  ServiceName,
   SocialDiv,
   StackDiv,
 } from './styled';
 
-import { FileText, Linkedin, Github, Mail } from 'lucide-react';
+import { FileText, Linkedin, Github, Mail, ArrowUp } from 'lucide-react';
 
 import Navbar from '../../components/Navbar/Navbar';
 
@@ -55,6 +59,12 @@ export default function Portfolio() {
   return (
     <div>
       <Navbar />
+      <a href="#">
+        <ButtonReturnToTop title="Retornar para o topo">
+          <ArrowUp />
+        </ButtonReturnToTop>
+      </a>
+
       <Div>
         <div className="gradient">
           <MainDiv className="section">
@@ -202,6 +212,50 @@ export default function Portfolio() {
             </Project>
           </div>
         </ProjectsSection>
+
+        <AboutMeSection className="section" id="about-me">
+          <H1>SOBRE MIM</H1>
+
+          <div className="text">
+            <p>
+              Oi! Me chamo Kauã Paixão e estou imerso no mundo de
+              desenvolvimento há 3 anos, época em que ainda cursava o ensino
+              médio técnico integrado em informática. Me formei recentemente, em
+              dezembro de 2023, no entanto, ainda não tive minha primeira
+              experiência profissional e, por isso, busco me preparar ao máximo
+              possível para minha primeira oportunidade, estudando e
+              desenvolvendo projetos pessoais práticos por fora, como
+              freelancer. E aí? Vamos nos conectar?
+            </p>
+          </div>
+
+          <div className="my-services">
+            <h2>Serviços oferecidos</h2>
+
+            <GridMyServices>
+              <div>
+                <p className="service-name">Desenvolvimento Front-end</p>
+                <p className="service-description">
+                  Criação de interfaces de usuário responsivas e intuitivas
+                  utilizando React.js e Styled Components.
+                </p>
+              </div>
+              <div>
+                <p className="service-name">Desenvolvimento Back-end</p>
+                <p className="service-description">
+                  Construção de APIs REST com Node.js, Express.js, e NestJS.
+                </p>
+              </div>
+              <div>
+                <p className="service-name">DevOps</p>
+                <p className="service-description">
+                  Configuração de ambientes de desenvolvimento com Docker e
+                  Docker Compose.
+                </p>
+              </div>
+            </GridMyServices>
+          </div>
+        </AboutMeSection>
 
         <ContactMeSection>
           <div
