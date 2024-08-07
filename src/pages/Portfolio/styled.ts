@@ -19,7 +19,20 @@ export const ButtonReturnToTop = styled.button`
   }
 `;
 
+export const mainDivAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-10vw);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
 export const MainDiv = styled.div`
+  animation: ${mainDivAnimation} 1.5s;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,7 +98,6 @@ export const marquee = keyframes`
 
 export const Div = styled.div`
   background: linear-gradient(#c8835d, #62402e);
-  scroll-behavior: smooth;
 
   .gradient {
     background: linear-gradient(#c8835d, #62402e);
@@ -244,11 +256,6 @@ export const GridMyServices = styled.div`
     margin-top: 5rem;
     padding: 5rem;
     gap: 5rem;
-    transition: 0.4s;
-
-    &:hover {
-      transform: translateY(-2%);
-    }
 
     .service-name {
       font-size: 2.2rem;
