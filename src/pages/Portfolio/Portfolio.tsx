@@ -22,7 +22,16 @@ import {
   StackDiv,
 } from './styled';
 
-import { FileText, Linkedin, Github, Mail, ArrowUp } from 'lucide-react';
+import {
+  FileText,
+  Linkedin,
+  Github,
+  Mail,
+  ArrowUp,
+  Monitor,
+  Database,
+  Settings2,
+} from 'lucide-react';
 
 import Navbar from '../../components/Navbar/Navbar';
 
@@ -234,6 +243,7 @@ export default function Portfolio() {
 
             <GridMyServices>
               <div>
+                <Monitor color="white" size={100} />
                 <p className="service-name">Desenvolvimento Front-end</p>
                 <p className="service-description">
                   Criação de interfaces de usuário responsivas e intuitivas
@@ -241,12 +251,14 @@ export default function Portfolio() {
                 </p>
               </div>
               <div>
+                <Database color="white" size={100} />
                 <p className="service-name">Desenvolvimento Back-end</p>
                 <p className="service-description">
                   Construção de APIs REST com Node.js, Express.js, e NestJS.
                 </p>
               </div>
               <div>
+                <Settings2 color="white" size={100} />
                 <p className="service-name">DevOps</p>
                 <p className="service-description">
                   Configuração de ambientes de desenvolvimento com Docker e
