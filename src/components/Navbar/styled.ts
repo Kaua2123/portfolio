@@ -8,6 +8,11 @@ export const Div = styled.div`
   align-items: center;
   padding: 2rem;
 
+  h5 {
+    font-family: Rowdies;
+    font-weight: 100;
+  }
+
   div {
     display: flex;
     flex-flow: row wrap;
@@ -18,6 +23,7 @@ export const Div = styled.div`
       font-weight: bold;
       color: ${({ theme }) => theme.colors.white};
       cursor: pointer;
+      transition: 0.1s;
 
       &:hover {
         color: ${({ theme }) => theme.colors.lightBrown};

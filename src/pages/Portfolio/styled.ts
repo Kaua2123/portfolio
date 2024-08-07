@@ -137,6 +137,15 @@ export const DivContactMe = styled.div`
   width: 100%;
   padding: 0 15rem;
 
+  .button-copy {
+    border-radius: 0;
+    box-shadow: none;
+
+    &:hover {
+      transform: translateY(0);
+    }
+  }
+
   .email {
     background-color: #feddca;
     color: #000;
@@ -144,10 +153,17 @@ export const DivContactMe = styled.div`
     font-family: Rowdies;
     padding: 2rem;
     width: 25rem;
-    border-radius: 0.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .copy-email-div {
+    display: flex;
+    flex-flow: column wrap;
+    box-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.1),
+      0 6px 20px rgba(0, 0, 0, 0.1);
   }
 
   .text-div {

@@ -7,7 +7,7 @@ export default function Navbar() {
     <div>
       <Div>
         <div>
-          <h3>Kauã Paixão</h3>
+          <h5>Kauã Paixão</h5>
         </div>
         <div>
           <a href="#">

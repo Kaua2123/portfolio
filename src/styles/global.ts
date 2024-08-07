@@ -58,15 +58,15 @@ a {
     0 4px 8px rgba(0, 0, 0, 0.1),
     0 6px 20px rgba(0, 0, 0, 0.1);
     font-family: 'Rowdies' sans-serif;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 2rem;
-    background-color: ${({ theme }) => theme.colors.darkerBrown};
+    background-color: ${({ theme }) => theme.colors.brown};
     color: ${({ theme }) => theme.colors.white};
     border: none;
     padding: 2rem;
-    border-radius: 0.4rem;
+    border-radius: 1rem;
     width: 25rem;
-    transition: 0.1s;
+    transition: 0.2s;
     cursor: pointer;
     display: flex;
     flex-flow: row wrap;
@@ -74,17 +74,13 @@ a {
     align-items: center;
 
     &:hover {
-        color: ${({ theme }) => theme.colors.lightBrown};
         opacity: 0.8;
+        transform: translateY(-5%);
     }
 }
 
 .button-two {
-    box-shadow:
-    0 4px 8px rgba(0, 0, 0, 0.1),
-    0 6px 20px rgba(0, 0, 0, 0.1);
     font-family: 'Rowdies' sans-serif;
-    font-weight: bold;
     font-style: normal;
     font-size: 2rem;
     background-color: ${({ theme }) => theme.colors.darkBrown};

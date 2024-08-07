@@ -75,13 +75,18 @@ export default function Portfolio() {
               </AboutMe>
             </HeroSection>
             <SocialDiv>
-              <a href={curriculo} download={'curriculo.pdf'}>
+              <a
+                href={curriculo}
+                title="Baixar currículo"
+                download={'curriculo.pdf'}
+              >
                 <ButtonIcon>
                   <FileText size={'4rem'} />
                 </ButtonIcon>
               </a>
 
               <a
+                title="Visitar meu LinkedIn"
                 href="https://www.linkedin.com/in/kaua-paixao/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -92,6 +97,7 @@ export default function Portfolio() {
               </a>
 
               <a
+                title="Visitar meu Github"
                 href="https://github.com/Kaua2123"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -209,9 +215,9 @@ export default function Portfolio() {
                 <Mail size={80} color="white" />
                 <h2>Fale comigo!</h2>
               </div>
-              <div>
+              <div className="copy-email-div">
                 <div className="email">kauapaixao37@gmail.com</div>
-                <button className="button-one" onClick={copyEmail}>
+                <button className="button-one button-copy" onClick={copyEmail}>
                   {isCopied ? 'EMAIL COPIADO' : 'COPIAR EMAIL'}
                 </button>
               </div>
