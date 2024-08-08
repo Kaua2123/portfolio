@@ -39,7 +39,7 @@ export const MainDiv = styled.div`
   gap: 8rem;
 
   .about-me-paragraph {
-    animation: ${mainDivAnimation} 0.8s ease-in-out;
+    animation: ${mainDivAnimation} 1s ease-in-out;
     font-family: 'Abril Fatface';
     color: ${({ theme }) => theme.colors.lightOrange};
     font-size: 2.6rem;
@@ -47,7 +47,7 @@ export const MainDiv = styled.div`
 `;
 
 export const HeroSection = styled.div`
-  animation: ${mainDivAnimation} 0.8s;
+  animation: ${mainDivAnimation} 1s;
 
   p {
     font-family: 'Abril Fatface';
@@ -64,7 +64,7 @@ export const SocialDiv = styled.div`
   display: flex;
   flex-flow: column wrap;
   gap: 3rem;
-  animation: ${mainDivAnimation} 0.8s;
+  animation: ${mainDivAnimation} 1s;
 `;
 
 export const ButtonIcon = styled.div`
@@ -118,22 +118,23 @@ export const Marquee = styled.div`
   }
 `;
 
-export const projectsSectionAnimation = keyframes`
+export const projectsAnimation = keyframes`
   from {
     opacity: 0;
+    visibility: hidden;
     transform: translateX(-10vw);
   }
 
   to {
     opacity: 1;
+    visibility: visible;
     transform: translateX(0);
   }
 `;
 
-export const ProjectsSection = styled.div<{ isAnimated?: boolean }>`
+export const ProjectsSection = styled.div`
   margin: 5rem 10rem;
-  /* animation: ${(props) =>
-    props.isAnimated && projectsSectionAnimation} 1s; */
+  overflow: hidden;
 
   h1 {
     text-align: end;
@@ -151,7 +152,17 @@ export const ProjectsSection = styled.div<{ isAnimated?: boolean }>`
   }
 `;
 
-export const Project = styled.div`
+export const Project = styled.div<{
+  isAnimated?: boolean;
+  isAnimated2?: boolean;
+}>`
+  &.project-1 {
+    animation: ${(props) => props.isAnimated && projectsAnimation} 1.2s forwards;
+  }
+  &.project-2 {
+    animation: ${(props) => props.isAnimated2 && projectsAnimation} 1.2s;
+  }
+
   display: flex;
   gap: 10rem;
   align-items: center;

@@ -49,20 +49,40 @@ import socialblogHome from '../../assets/socialblog-home.jpg';
 export default function Portfolio() {
   const [isCopied, setIsCopied] = useState(false);
   const [isAnimated, setIsAnimated] = useState(false);
-  const projectsRef = useRef(null);
+  const [isAnimated2, setIsAnimated2] = useState(false);
+  const projectOneRef = useRef(null);
+  const secondProjectRef = useRef(null);
 
   // LÓGICA DE SCROLL DRIVEN ANIMATION
   useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
+    const projectOneObserver = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setIsAnimated(true);
       }
     });
 
-    if (projectsRef.current) observer.observe(projectsRef.current);
+    if (projectOneRef.current)
+      projectOneObserver.observe(projectOneRef.current);
 
     return () => {
-      if (projectsRef.current) observer.unobserve(projectsRef.current);
+      if (projectOneRef.current)
+        projectOneObserver.unobserve(projectOneRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    const secondProjectObserver = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsAnimated2(true);
+      }
+    });
+
+    if (secondProjectRef.current)
+      secondProjectObserver.observe(secondProjectRef.current);
+
+    return () => {
+      if (secondProjectRef.current)
+        secondProjectObserver.unobserve(secondProjectRef.current);
     };
   }, []);
 
@@ -172,17 +192,16 @@ export default function Portfolio() {
           </StackDiv>
         </div>
 
-        <ProjectsSection
-          isAnimated={isAnimated}
-          ref={projectsRef}
-          className="section"
-          id="projects"
-        >
+        <ProjectsSection className="section" id="projects">
           <H1>PROJETOS</H1>
           <div
             style={{ display: 'flex', flexFlow: 'column nowrap', gap: '20rem' }}
           >
-            <Project>
+            <Project
+              className="project-1"
+              ref={projectOneRef}
+              isAnimated={isAnimated}
+            >
               <ProjectCard>
                 <img src={chathubPreview} alt="" />
               </ProjectCard>
@@ -211,7 +230,11 @@ export default function Portfolio() {
               </ProjectInfo>
             </Project>
 
-            <Project>
+            <Project
+              className="project-2"
+              ref={secondProjectRef}
+              isAnimated2={isAnimated2}
+            >
               <ProjectInfo>
                 <h2>Social Blog</h2>
                 <h6>Aplicação de blog / rede social </h6>
