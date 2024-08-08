@@ -49,42 +49,34 @@ import socialblogHome from '../../assets/socialblog-home.jpg';
 export default function Portfolio() {
   const [isCopied, setIsCopied] = useState(false);
   const [isAnimated, setIsAnimated] = useState(false);
-  const [isAnimated2, setIsAnimated2] = useState(false);
-  const projectOneRef = useRef(null);
-  const secondProjectRef = useRef(null);
+  const [isGridsAnimated, setIsGridsAnimated] = useState(false);
+  const projectsRef = useRef(null);
+  const gridsRef = useRef(null);
 
   // LÓGICA DE SCROLL DRIVEN ANIMATION
   useEffect(() => {
-    const projectOneObserver = new IntersectionObserver(([entry]) => {
+    const projectsObserver = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         setIsAnimated(true);
       }
     });
 
-    if (projectOneRef.current)
-      projectOneObserver.observe(projectOneRef.current);
-
-    return () => {
-      if (projectOneRef.current)
-        projectOneObserver.unobserve(projectOneRef.current);
-    };
-  }, []);
-
-  useEffect(() => {
-    const secondProjectObserver = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setIsAnimated2(true);
-      }
+    const gridsObserver = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) setIsGridsAnimated(true);
     });
 
-    if (secondProjectRef.current)
-      secondProjectObserver.observe(secondProjectRef.current);
+    if (projectsRef.current) projectsObserver.observe(projectsRef.current);
+
+    if (gridsRef.current) gridsObserver.observe(gridsRef.current);
 
     return () => {
-      if (secondProjectRef.current)
-        secondProjectObserver.unobserve(secondProjectRef.current);
+      if (projectsRef.current) projectsObserver.unobserve(projectsRef.current);
+
+      if (gridsRef.current) gridsObserver.unobserve(gridsRef.current);
     };
   }, []);
+
+  useEffect(() => {}, []);
 
   const copyEmail = () => {
     navigator.clipboard
@@ -192,16 +184,12 @@ export default function Portfolio() {
           </StackDiv>
         </div>
 
-        <ProjectsSection className="section" id="projects">
+        <ProjectsSection ref={projectsRef} className="section" id="projects">
           <H1>PROJETOS</H1>
           <div
             style={{ display: 'flex', flexFlow: 'column nowrap', gap: '20rem' }}
           >
-            <Project
-              className="project-1"
-              ref={projectOneRef}
-              isAnimated={isAnimated}
-            >
+            <Project className="project-1" isAnimated={isAnimated}>
               <ProjectCard>
                 <img src={chathubPreview} alt="" />
               </ProjectCard>
@@ -230,11 +218,7 @@ export default function Portfolio() {
               </ProjectInfo>
             </Project>
 
-            <Project
-              className="project-2"
-              ref={secondProjectRef}
-              isAnimated2={isAnimated2}
-            >
+            <Project className="project-2" isAnimated={isAnimated}>
               <ProjectInfo>
                 <h2>Social Blog</h2>
                 <h6>Aplicação de blog / rede social </h6>
@@ -285,7 +269,7 @@ export default function Portfolio() {
           <div className="my-services">
             <h2>Serviços oferecidos</h2>
 
-            <GridMyServices>
+            <GridMyServices isGridsAnimated={isGridsAnimated} ref={gridsRef}>
               <div>
                 <Monitor color="white" size={100} />
                 <p className="service-name">Desenvolvimento Front-end</p>

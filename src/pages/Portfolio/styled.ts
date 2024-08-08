@@ -121,13 +121,11 @@ export const Marquee = styled.div`
 export const projectsAnimation = keyframes`
   from {
     opacity: 0;
-    visibility: hidden;
     transform: translateX(-10vw);
   }
 
   to {
     opacity: 1;
-    visibility: visible;
     transform: translateX(0);
   }
 `;
@@ -154,14 +152,8 @@ export const ProjectsSection = styled.div`
 
 export const Project = styled.div<{
   isAnimated?: boolean;
-  isAnimated2?: boolean;
 }>`
-  &.project-1 {
-    animation: ${(props) => props.isAnimated && projectsAnimation} 1.2s forwards;
-  }
-  &.project-2 {
-    animation: ${(props) => props.isAnimated2 && projectsAnimation} 1.2s;
-  }
+  animation: ${(props) => props.isAnimated && projectsAnimation} 1.2s;
 
   display: flex;
   gap: 10rem;
@@ -270,12 +262,25 @@ export const AboutMeSection = styled.div`
   }
 `;
 
-export const GridMyServices = styled.div`
+export const gridAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(5%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+`;
+
+export const GridMyServices = styled.div<{ isGridsAnimated?: boolean }>`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5rem;
 
   div {
+    animation: ${(props) => props.isGridsAnimated && gridAnimation} 1s;
+
     background-color: ${({ theme }) => theme.colors.brown};
     border-radius: 2rem;
     display: flex;
