@@ -22,7 +22,7 @@ export const ButtonReturnToTop = styled.button`
 export const mainDivAnimation = keyframes`
   from {
     opacity: 0;
-    transform: translateX(-10vw);
+    transform: translateX(-2vw);
   }
 
   to {
@@ -32,14 +32,14 @@ export const mainDivAnimation = keyframes`
 `;
 
 export const MainDiv = styled.div`
-  animation: ${mainDivAnimation} 1.5s;
+  opacity: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8rem;
-  scroll-behavior: smooth;
 
   .about-me-paragraph {
+    animation: ${mainDivAnimation} 0.8s ease-in-out;
     font-family: 'Abril Fatface';
     color: ${({ theme }) => theme.colors.lightOrange};
     font-size: 2.6rem;
@@ -47,6 +47,8 @@ export const MainDiv = styled.div`
 `;
 
 export const HeroSection = styled.div`
+  animation: ${mainDivAnimation} 0.8s;
+
   p {
     font-family: 'Abril Fatface';
     color: ${({ theme }) => theme.colors.lightOrange};
@@ -62,6 +64,7 @@ export const SocialDiv = styled.div`
   display: flex;
   flex-flow: column wrap;
   gap: 3rem;
+  animation: ${mainDivAnimation} 0.8s;
 `;
 
 export const ButtonIcon = styled.div`
@@ -115,8 +118,22 @@ export const Marquee = styled.div`
   }
 `;
 
-export const ProjectsSection = styled.div`
+export const projectsSectionAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-10vw);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
+export const ProjectsSection = styled.div<{ isAnimated?: boolean }>`
   margin: 5rem 10rem;
+  /* animation: ${(props) =>
+    props.isAnimated && projectsSectionAnimation} 1s; */
 
   h1 {
     text-align: end;

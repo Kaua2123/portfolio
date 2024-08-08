@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import {
   AboutMe,
@@ -48,6 +48,23 @@ import socialblogHome from '../../assets/socialblog-home.jpg';
 
 export default function Portfolio() {
   const [isCopied, setIsCopied] = useState(false);
+  const [isAnimated, setIsAnimated] = useState(false);
+  const projectsRef = useRef(null);
+
+  // LÓGICA DE SCROLL DRIVEN ANIMATION
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsAnimated(true);
+      }
+    });
+
+    if (projectsRef.current) observer.observe(projectsRef.current);
+
+    return () => {
+      if (projectsRef.current) observer.unobserve(projectsRef.current);
+    };
+  }, []);
 
   const copyEmail = () => {
     navigator.clipboard
@@ -155,7 +172,12 @@ export default function Portfolio() {
           </StackDiv>
         </div>
 
-        <ProjectsSection className="section" id="projects">
+        <ProjectsSection
+          isAnimated={isAnimated}
+          ref={projectsRef}
+          className="section"
+          id="projects"
+        >
           <H1>PROJETOS</H1>
           <div
             style={{ display: 'flex', flexFlow: 'column nowrap', gap: '20rem' }}
