@@ -112,7 +112,7 @@ export default function Portfolio() {
           <MainDiv className="section">
             <HeroSection>
               <div style={{ lineHeight: '1' }}>
-                <p>Olá! 👋 Me chamo Kauã e sou</p>
+                <p className="hi-paragraph">Olá! 👋 Me chamo Kauã e sou</p>
                 <H1>
                   FULLSTACK
                   <br /> DEVELOPER

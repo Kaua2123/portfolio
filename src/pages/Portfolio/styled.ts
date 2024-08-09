@@ -44,6 +44,11 @@ export const MainDiv = styled.div`
     color: ${({ theme }) => theme.colors.lightOrange};
     font-size: 2.6rem;
   }
+
+  @media (max-width: 768px) {
+    flex-flow: column wrap;
+    width: 100%;
+  }
 `;
 
 export const HeroSection = styled.div`
@@ -53,6 +58,22 @@ export const HeroSection = styled.div`
     font-family: 'Abril Fatface';
     color: ${({ theme }) => theme.colors.lightOrange};
     font-size: 3.5rem;
+  }
+
+  @media (max-width: 768px) {
+    text-align: center;
+
+    h1 {
+      font-size: 6rem;
+    }
+
+    .hi-paragraph {
+      font-size: 2.5rem;
+    }
+
+    .about-me-paragraph {
+      font-size: 2rem;
+    }
   }
 `;
 
@@ -65,6 +86,10 @@ export const SocialDiv = styled.div`
   flex-flow: column wrap;
   gap: 3rem;
   animation: ${mainDivAnimation} 1s;
+
+  @media (max-width: 768px) {
+    flex-flow: row wrap;
+  }
 `;
 
 export const ButtonIcon = styled.div`
@@ -84,6 +109,10 @@ export const ButtonIcon = styled.div`
     box-shadow:
       0 4px 8px rgba(0, 0, 0, 0.1),
       0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
   }
 `;
 

@@ -42,7 +42,7 @@ export const Div = styled.div<{ $isMenuOpen?: boolean }>`
     .hamburguer {
       position: absolute;
       top: 0;
-      left: 0;
+      left: 5px;
       margin-bottom: ${(props) => props.$isMenuOpen && '2rem'};
     }
 
