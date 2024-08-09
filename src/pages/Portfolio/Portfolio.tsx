@@ -50,8 +50,11 @@ export default function Portfolio() {
   const [isCopied, setIsCopied] = useState(false);
   const [isAnimated, setIsAnimated] = useState(false);
   const [isGridsAnimated, setIsGridsAnimated] = useState(false);
+  const [isDivAnimated, setIsDivAnimated] = useState(false);
   const projectsRef = useRef(null);
   const gridsRef = useRef(null);
+  const divTextRef = useRef(null);
+  const EMAIL = 'kauapaixao37@gmail.com';
 
   // LÓGICA DE SCROLL DRIVEN ANIMATION
   useEffect(() => {
@@ -65,22 +68,24 @@ export default function Portfolio() {
       if (entry.isIntersecting) setIsGridsAnimated(true);
     });
 
-    if (projectsRef.current) projectsObserver.observe(projectsRef.current);
+    const divObserver = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) setIsDivAnimated(true);
+    });
 
+    if (projectsRef.current) projectsObserver.observe(projectsRef.current);
     if (gridsRef.current) gridsObserver.observe(gridsRef.current);
+    if (divTextRef.current) divObserver.observe(divTextRef.current);
 
     return () => {
       if (projectsRef.current) projectsObserver.unobserve(projectsRef.current);
-
       if (gridsRef.current) gridsObserver.unobserve(gridsRef.current);
+      if (divTextRef.current) gridsObserver.unobserve(divTextRef.current);
     };
   }, []);
 
-  useEffect(() => {}, []);
-
   const copyEmail = () => {
     navigator.clipboard
-      .writeText('kauapaixao37@gmail.com')
+      .writeText(EMAIL)
       .then(() => {
         setIsCopied(true);
       })
@@ -250,10 +255,14 @@ export default function Portfolio() {
           </div>
         </ProjectsSection>
 
-        <AboutMeSection className="section" id="about-me">
+        <AboutMeSection
+          className="section"
+          id="about-me"
+          isDivAnimated={isDivAnimated}
+        >
           <H1>SOBRE MIM</H1>
 
-          <div className="text">
+          <div className="text" ref={divTextRef}>
             <p>
               Oi! Me chamo Kauã Paixão e estou imerso no mundo de
               desenvolvimento há 3 anos, época em que ainda cursava o ensino

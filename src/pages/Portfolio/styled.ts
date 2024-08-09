@@ -229,10 +229,21 @@ export const H1 = styled.h1`
   font-size: 10rem;
 `;
 
-export const AboutMeSection = styled.div`
+export const divAnimation = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`;
+
+export const AboutMeSection = styled.div<{ isDivAnimated?: boolean }>`
   margin: 15rem 10rem;
 
   .text {
+    animation: ${(props) => props.isDivAnimated && divAnimation} 1s;
     margin-top: 6rem;
     padding: 6rem;
     background-color: ${({ theme }) => theme.colors.brown};
@@ -264,12 +275,13 @@ export const AboutMeSection = styled.div`
 
 export const gridAnimation = keyframes`
   from {
+    visibility: hidden;
     opacity: 0;
-    transform: translateY(5%);
   }
 
   to {
-    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
   }
 `;
 
@@ -279,8 +291,7 @@ export const GridMyServices = styled.div<{ isGridsAnimated?: boolean }>`
   gap: 5rem;
 
   div {
-    animation: ${(props) => props.isGridsAnimated && gridAnimation} 1s;
-
+    animation: ${(props) => props.isGridsAnimated && gridAnimation} 1.5s;
     background-color: ${({ theme }) => theme.colors.brown};
     border-radius: 2rem;
     display: flex;
