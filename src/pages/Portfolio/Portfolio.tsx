@@ -116,7 +116,7 @@ export default function Portfolio() {
 
   return (
     <div>
-      <Navbar />
+      <Navbar isMobile={isMobile} />
       <a href="#">
         <ButtonReturnToTop title="Retornar para o topo">
           <ArrowUp />

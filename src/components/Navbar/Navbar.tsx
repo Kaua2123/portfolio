@@ -1,24 +1,15 @@
 import { Div } from './styled';
 
 import curriculo from '../../assets/curriculo.pdf';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Menu } from 'lucide-react';
 
-export default function Navbar() {
+export type NavbarProps = {
+  isMobile: boolean;
+};
+
+export default function Navbar({ isMobile }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   return (
     <div>
