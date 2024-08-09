@@ -191,6 +191,39 @@ export const ProjectsSection = styled.div`
       0 4px 8px rgba(0, 0, 0, 0.1),
       0 6px 20px rgba(0, 0, 0, 0.1);
   }
+
+  @media (max-width: 768px) {
+    margin: 0;
+
+    h1 {
+      text-align: center;
+      font-size: 6rem;
+      margin-top: 4rem;
+    }
+
+    h2,
+    h6 {
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    h6 {
+      font-size: 1.8rem;
+    }
+  }
+`;
+
+export const ProjectsDiv = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 20rem;
+
+  @media (max-width: 768px) {
+    gap: 10rem;
+  }
 `;
 
 export const Project = styled.div<{
@@ -201,6 +234,13 @@ export const Project = styled.div<{
   display: flex;
   gap: 10rem;
   align-items: center;
+
+  @media (max-width: 768px) {
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+  }
 `;
 
 export const ProjectCard = styled.div`
@@ -213,9 +253,35 @@ export const ProjectCard = styled.div`
     height: inherit;
     border-radius: inherit;
   }
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      -webkit-box-shadow: 10px 10px 44px 4px rgba(0, 0, 0, 0.24);
+      -moz-box-shadow: 10px 10px 44px 4px rgba(0, 0, 0, 0.24);
+      box-shadow: 10px 10px 44px 4px rgba(0, 0, 0, 0.24);
+    }
+  }
 `;
 
-export const ProjectInfo = styled.div``;
+export const ProjectInfo = styled.div`
+  @media (max-width: 768px) {
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      font-size: 1.4rem;
+      width: 15rem;
+    }
+  }
+`;
 
 export const ContactMeSection = styled.div`
   margin-top: 20rem;

@@ -16,6 +16,7 @@ import {
   Project,
   ProjectCard,
   ProjectInfo,
+  ProjectsDiv,
   ProjectsSection,
   SocialDiv,
   StackDiv,
@@ -45,16 +46,31 @@ import dockerLogo from '../../assets/logo-docker.svg';
 import curriculo from '../../assets/curriculo.pdf';
 import chathubPreview from '../../assets/chathub_preview.png';
 import socialblogHome from '../../assets/socialblog-home.jpg';
+import socialblogHomeMobile from '../../assets/socialblog-home-mobile.jpg';
+import chathubHomeMobile from '../../assets/chathub-home-mobile.jpg';
 
 export default function Portfolio() {
   const [isCopied, setIsCopied] = useState(false);
   const [isAnimated, setIsAnimated] = useState(false);
   const [isGridsAnimated, setIsGridsAnimated] = useState(false);
   const [isDivAnimated, setIsDivAnimated] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const projectsRef = useRef(null);
   const gridsRef = useRef(null);
   const divTextRef = useRef(null);
   const EMAIL = 'kauapaixao37@gmail.com';
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   // LÓGICA DE SCROLL DRIVEN ANIMATION
   useEffect(() => {
@@ -191,12 +207,14 @@ export default function Portfolio() {
 
         <ProjectsSection ref={projectsRef} className="section" id="projects">
           <H1>PROJETOS</H1>
-          <div
-            style={{ display: 'flex', flexFlow: 'column nowrap', gap: '20rem' }}
-          >
+          <ProjectsDiv>
             <Project className="project-1" $isAnimated={isAnimated}>
               <ProjectCard>
-                <img src={chathubPreview} alt="" />
+                {isMobile ? (
+                  <img src={chathubHomeMobile} alt="" />
+                ) : (
+                  <img src={chathubPreview} alt="" />
+                )}
               </ProjectCard>
               <ProjectInfo>
                 <h2>Chathub</h2>
@@ -249,10 +267,14 @@ export default function Portfolio() {
                 </div>
               </ProjectInfo>
               <ProjectCard>
-                <img src={socialblogHome} alt="" />
+                {isMobile ? (
+                  <img src={socialblogHomeMobile} alt="" />
+                ) : (
+                  <img src={socialblogHome} alt="" />
+                )}
               </ProjectCard>
             </Project>
-          </div>
+          </ProjectsDiv>
         </ProjectsSection>
 
         <AboutMeSection
