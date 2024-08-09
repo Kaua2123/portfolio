@@ -47,7 +47,6 @@ export const MainDiv = styled.div`
 
   @media (max-width: 768px) {
     flex-flow: column wrap;
-    width: 100%;
   }
 `;
 
@@ -116,16 +115,19 @@ export const ButtonIcon = styled.div`
   }
 `;
 
-export const StackDiv = styled.div`
-  background-color: inherit;
-  overflow: hidden;
-  padding: 2.3rem 0;
-  white-space: nowrap;
-`;
-
 export const marquee = keyframes`
   0% {transform: translateX(0)};
   100% {transform: translateX(-100%)}
+`;
+
+export const marqueeMobile = keyframes`
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100vw);
+  }
 `;
 
 export const Div = styled.div`
@@ -133,6 +135,16 @@ export const Div = styled.div`
 
   .gradient {
     background: linear-gradient(#c8835d, #62402e);
+  }
+`;
+
+export const StackDiv = styled.div`
+  background-color: inherit;
+  overflow: hidden;
+  padding: 2.3rem 0;
+  white-space: nowrap;
+
+  @media (max-width: 768px) {
   }
 `;
 
@@ -144,6 +156,17 @@ export const Marquee = styled.div`
   img {
     margin: 0 6rem;
     height: 6rem;
+  }
+
+  @media (max-width: 768px) {
+    animation: 5s ${marqueeMobile} infinite linear;
+    width: 100%;
+    display: inline-block;
+
+    img {
+      height: 2.5rem;
+      margin: 0 1rem;
+    }
   }
 `;
 
