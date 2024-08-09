@@ -47,6 +47,7 @@ export const MainDiv = styled.div`
 
   @media (max-width: 768px) {
     flex-flow: column wrap;
+    width: 100%;
   }
 `;
 
@@ -120,16 +121,6 @@ export const marquee = keyframes`
   100% {transform: translateX(-100%)}
 `;
 
-export const marqueeMobile = keyframes`
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-100vw);
-  }
-`;
-
 export const Div = styled.div`
   background: linear-gradient(#c8835d, #62402e);
 
@@ -159,7 +150,7 @@ export const Marquee = styled.div`
   }
 
   @media (max-width: 768px) {
-    animation: 5s ${marqueeMobile} infinite linear;
+    animation: 5s ${marquee} infinite linear;
     width: 100%;
     display: inline-block;
 
