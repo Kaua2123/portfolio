@@ -194,7 +194,7 @@ export default function Portfolio() {
           <div
             style={{ display: 'flex', flexFlow: 'column nowrap', gap: '20rem' }}
           >
-            <Project className="project-1" isAnimated={isAnimated}>
+            <Project className="project-1" $isAnimated={isAnimated}>
               <ProjectCard>
                 <img src={chathubPreview} alt="" />
               </ProjectCard>
@@ -223,7 +223,7 @@ export default function Portfolio() {
               </ProjectInfo>
             </Project>
 
-            <Project className="project-2" isAnimated={isAnimated}>
+            <Project className="project-2" $isAnimated={isAnimated}>
               <ProjectInfo>
                 <h2>Social Blog</h2>
                 <h6>Aplicação de blog / rede social </h6>
@@ -258,7 +258,7 @@ export default function Portfolio() {
         <AboutMeSection
           className="section"
           id="about-me"
-          isDivAnimated={isDivAnimated}
+          $isDivAnimated={isDivAnimated}
         >
           <H1>SOBRE MIM</H1>
 
@@ -278,7 +278,7 @@ export default function Portfolio() {
           <div className="my-services">
             <h2>Serviços oferecidos</h2>
 
-            <GridMyServices isGridsAnimated={isGridsAnimated} ref={gridsRef}>
+            <GridMyServices $isGridsAnimated={isGridsAnimated} ref={gridsRef}>
               <div>
                 <Monitor color="white" size={100} />
                 <p className="service-name">Desenvolvimento Front-end</p>

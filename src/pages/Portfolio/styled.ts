@@ -151,9 +151,9 @@ export const ProjectsSection = styled.div`
 `;
 
 export const Project = styled.div<{
-  isAnimated?: boolean;
+  $isAnimated?: boolean;
 }>`
-  animation: ${(props) => props.isAnimated && projectsAnimation} 1.2s;
+  animation: ${(props) => props.$isAnimated && projectsAnimation} 1.2s;
 
   display: flex;
   gap: 10rem;
@@ -239,11 +239,11 @@ export const divAnimation = keyframes`
   }
 `;
 
-export const AboutMeSection = styled.div<{ isDivAnimated?: boolean }>`
+export const AboutMeSection = styled.div<{ $isDivAnimated?: boolean }>`
   margin: 15rem 10rem;
 
   .text {
-    animation: ${(props) => props.isDivAnimated && divAnimation} 1s;
+    animation: ${(props) => props.$isDivAnimated && divAnimation} 1s;
     margin-top: 6rem;
     padding: 6rem;
     background-color: ${({ theme }) => theme.colors.brown};
@@ -285,13 +285,13 @@ export const gridAnimation = keyframes`
   }
 `;
 
-export const GridMyServices = styled.div<{ isGridsAnimated?: boolean }>`
+export const GridMyServices = styled.div<{ $isGridsAnimated?: boolean }>`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5rem;
 
   div {
-    animation: ${(props) => props.isGridsAnimated && gridAnimation} 1.5s;
+    animation: ${(props) => props.$isGridsAnimated && gridAnimation} 1.5s;
     background-color: ${({ theme }) => theme.colors.brown};
     border-radius: 2rem;
     display: flex;
