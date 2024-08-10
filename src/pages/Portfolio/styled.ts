@@ -372,6 +372,13 @@ export const AboutMeSection = styled.div<{ $isDivAnimated?: boolean }>`
   }
 
   @media (max-width: 768px) {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    margin-top: 10rem;
+
     h1 {
       text-align: center;
       font-size: 6rem;
@@ -379,7 +386,7 @@ export const AboutMeSection = styled.div<{ $isDivAnimated?: boolean }>`
 
     .text {
       padding: 2rem;
-      width: 20rem;
+      width: 27rem;
       text-align: center;
     }
 
@@ -440,6 +447,7 @@ export const GridMyServices = styled.div<{ $isGridsAnimated?: boolean }>`
     div {
       text-align: center;
       padding: 3.5rem;
+      width: 27rem;
     }
   }
 `;

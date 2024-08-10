@@ -282,7 +282,14 @@ export default function Portfolio() {
           id="about-me"
           $isDivAnimated={isDivAnimated}
         >
-          <H1>SOBRE MIM</H1>
+          {isMobile ? (
+            <H1>
+              SOBRE <br />
+              MIM
+            </H1>
+          ) : (
+            <H1>SOBRE MIM</H1>
+          )}
 
           <div className="text" ref={divTextRef}>
             <p>
@@ -298,7 +305,14 @@ export default function Portfolio() {
           </div>
 
           <div className="my-services">
-            <h2>Serviços oferecidos</h2>
+            {isMobile ? (
+              <h2>
+                Serviços <br />
+                oferecidos
+              </h2>
+            ) : (
+              <h2>Serviços oferecidos</h2>
+            )}
 
             <GridMyServices $isGridsAnimated={isGridsAnimated} ref={gridsRef}>
               <div>
