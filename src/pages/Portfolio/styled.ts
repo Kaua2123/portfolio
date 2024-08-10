@@ -17,6 +17,11 @@ export const ButtonReturnToTop = styled.button`
     color: ${({ theme }) => theme.colors.white};
     transform: scale(1.1);
   }
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    margin: 2rem;
+  }
 `;
 
 export const mainDivAnimation = keyframes`
