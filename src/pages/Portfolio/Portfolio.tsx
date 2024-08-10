@@ -84,7 +84,7 @@ export default function Portfolio() {
       ([entry]) => {
         if (entry.isIntersecting) setIsGridsAnimated(true);
       },
-      { threshold: 0.4 },
+      { threshold: 0.2 },
     );
 
     const divObserver = new IntersectionObserver(
@@ -92,7 +92,7 @@ export default function Portfolio() {
         if (entry.isIntersecting) setIsDivAnimated(true);
       },
       {
-        threshold: 0.4,
+        threshold: 0.2,
       },
     );
 

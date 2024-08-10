@@ -72,7 +72,7 @@ export const HeroSection = styled.div`
     text-align: center;
 
     h1 {
-      font-size: 6rem;
+      font-size: 5.5rem;
     }
 
     .hi-paragraph {
@@ -185,8 +185,17 @@ export const projectsAnimation = keyframes`
 export const ProjectsSection = styled.div<{ $isAnimated?: boolean }>`
   margin: 5rem 10rem;
   overflow: hidden;
-  visibility: hidden;
-  animation: ${(props) => props.$isAnimated && projectsAnimation} forwards 1.2s;
+
+  .project-1,
+  .project-2 {
+    visibility: hidden;
+  }
+
+  .project-1,
+  .project-2 {
+    animation: ${(props) => props.$isAnimated && projectsAnimation} forwards
+      1.2s;
+  }
 
   h1 {
     text-align: end;
@@ -386,7 +395,8 @@ export const AboutMeSection = styled.div<{ $isDivAnimated?: boolean }>`
     margin-top: 6rem;
   }
 
-  h1 {
+  h1,
+  h2 {
     animation: ${(props) => props.$isDivAnimated && divAnimation} forwards 1s;
   }
 
