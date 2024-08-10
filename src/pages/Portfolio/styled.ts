@@ -361,16 +361,6 @@ export const AboutMeSection = styled.div<{ $isDivAnimated?: boolean }>`
 
   .my-services {
     margin-top: 6rem;
-
-    ul {
-      padding-left: 6rem;
-      margin-top: 4rem;
-
-      li {
-        color: white;
-        font-size: 2rem;
-      }
-    }
   }
 
   p {
@@ -379,6 +369,26 @@ export const AboutMeSection = styled.div<{ $isDivAnimated?: boolean }>`
     font-style: normal;
     font-weight: 100;
     font-size: 1.8rem;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      text-align: center;
+      font-size: 6rem;
+    }
+
+    .text {
+      padding: 2rem;
+      width: 20rem;
+      text-align: center;
+    }
+
+    .my-services {
+      h2 {
+        font-size: 4rem;
+        text-align: center;
+      }
+    }
   }
 `;
 
@@ -419,6 +429,17 @@ export const GridMyServices = styled.div<{ $isGridsAnimated?: boolean }>`
       font-family: Rowdies, sans-serif;
       font-weight: 300;
       font-style: normal;
+    }
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+
+    div {
+      text-align: center;
+      padding: 3.5rem;
     }
   }
 `;
