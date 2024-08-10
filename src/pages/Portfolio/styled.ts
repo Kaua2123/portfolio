@@ -332,6 +332,18 @@ export const DivContactMe = styled.div`
     align-items: center;
     justify-content: center;
   }
+
+  @media (max-width: 768px) {
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem;
+    gap: 2.5rem;
+
+    .text-div {
+      text-align: center;
+    }
+  }
 `;
 
 export const H1 = styled.h1`
