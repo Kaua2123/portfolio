@@ -11,6 +11,7 @@ export const ButtonReturnToTop = styled.button`
   padding: 1.5rem;
   cursor: pointer;
   transition: 0.1s;
+  z-index: 2;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.brown};
@@ -191,7 +192,11 @@ export const ProjectsSection = styled.div<{ $isAnimated?: boolean }>`
     visibility: hidden;
   }
 
-  .project-1,
+  .project-1 {
+    animation: ${(props) => props.$isAnimated && projectsAnimation} forwards
+      1.2s;
+  }
+
   .project-2 {
     animation: ${(props) => props.$isAnimated && projectsAnimation} forwards
       1.2s;

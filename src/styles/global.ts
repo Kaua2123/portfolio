@@ -18,7 +18,6 @@ html {
 body {
     font-size: 1.7rem;
     background: ${({ theme }) => theme.colors.brown};
-    background: linear-gradient(${({ theme }) => theme.colors.lightBrown}, ${({ theme }) => theme.colors.brown} );
     line-height: 1.5;
 }
 

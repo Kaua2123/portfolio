@@ -188,26 +188,26 @@ export default function Portfolio() {
           <StackDiv>
             <Marquee>
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={javascriptLogo} alt="" />
-                <img src={typescriptLogo} alt="" />
-                <img src={reactLogo} alt="" />
-                <img src={nodejsLogo} alt="" />
-                <img src={nestjsLogo} alt="" />
-                <img src={expressLogo} alt="" />
-                <img src={mysqlLogo} alt="" />
-                <img src={dockerLogo} alt="" />
+                <img src={javascriptLogo} alt="" loading="lazy" />
+                <img src={typescriptLogo} alt="" loading="lazy" />
+                <img src={reactLogo} alt="" loading="lazy" />
+                <img src={nodejsLogo} alt="" loading="lazy" />
+                <img src={nestjsLogo} alt="" loading="lazy" />
+                <img src={expressLogo} alt="" loading="lazy" />
+                <img src={mysqlLogo} alt="" loading="lazy" />
+                <img src={dockerLogo} alt="" loading="lazy" />
               </div>
             </Marquee>
             <Marquee>
               <div style={{ display: 'flex', alignItems: 'center' }}>
-                <img src={javascriptLogo} alt="" />
-                <img src={typescriptLogo} alt="" />
-                <img src={reactLogo} alt="" />
-                <img src={nodejsLogo} alt="" />
-                <img src={nestjsLogo} alt="" />
-                <img src={expressLogo} alt="" />
-                <img src={mysqlLogo} alt="" />
-                <img src={dockerLogo} alt="" />
+                <img src={javascriptLogo} alt="" loading="lazy" />
+                <img src={typescriptLogo} alt="" loading="lazy" />
+                <img src={reactLogo} alt="" loading="lazy" />
+                <img src={nodejsLogo} alt="" loading="lazy" />
+                <img src={nestjsLogo} alt="" loading="lazy" />
+                <img src={expressLogo} alt="" loading="lazy" />
+                <img src={mysqlLogo} alt="" loading="lazy" />
+                <img src={dockerLogo} alt="" loading="lazy" />
               </div>
             </Marquee>
           </StackDiv>
@@ -224,9 +224,9 @@ export default function Portfolio() {
             <Project className="project-1" $isAnimated={isAnimated}>
               <ProjectCard>
                 {isMobile ? (
-                  <img src={chathubHomeMobile} alt="" />
+                  <img src={chathubHomeMobile} alt="" loading="lazy" />
                 ) : (
-                  <img src={chathubPreview} alt="" />
+                  <img src={chathubPreview} alt="" loading="lazy" />
                 )}
               </ProjectCard>
               <ProjectInfo>
@@ -281,9 +281,9 @@ export default function Portfolio() {
               </ProjectInfo>
               <ProjectCard>
                 {isMobile ? (
-                  <img src={socialblogHomeMobile} alt="" />
+                  <img src={socialblogHomeMobile} alt="" loading="lazy" />
                 ) : (
-                  <img src={socialblogHome} alt="" />
+                  <img src={socialblogHome} alt="" loading="lazy" />
                 )}
               </ProjectCard>
             </Project>
