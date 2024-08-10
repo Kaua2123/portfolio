@@ -80,13 +80,21 @@ export default function Portfolio() {
       }
     });
 
-    const gridsObserver = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) setIsGridsAnimated(true);
-    });
+    const gridsObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsGridsAnimated(true);
+      },
+      { threshold: 0.4 },
+    );
 
-    const divObserver = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) setIsDivAnimated(true);
-    });
+    const divObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setIsDivAnimated(true);
+      },
+      {
+        threshold: 0.4,
+      },
+    );
 
     if (projectsRef.current) projectsObserver.observe(projectsRef.current);
     if (gridsRef.current) gridsObserver.observe(gridsRef.current);
@@ -205,7 +213,12 @@ export default function Portfolio() {
           </StackDiv>
         </div>
 
-        <ProjectsSection ref={projectsRef} className="section" id="projects">
+        <ProjectsSection
+          ref={projectsRef}
+          $isAnimated={isAnimated}
+          className="section"
+          id="projects"
+        >
           <H1>PROJETOS</H1>
           <ProjectsDiv>
             <Project className="project-1" $isAnimated={isAnimated}>

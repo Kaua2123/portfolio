@@ -57,12 +57,15 @@ export const MainDiv = styled.div`
 `;
 
 export const HeroSection = styled.div`
-  animation: ${mainDivAnimation} 1s;
-
   p {
+    animation: ${mainDivAnimation} 1s;
     font-family: 'Abril Fatface';
     color: ${({ theme }) => theme.colors.lightOrange};
     font-size: 3.5rem;
+  }
+
+  h1 {
+    animation: ${mainDivAnimation} 1s;
   }
 
   @media (max-width: 768px) {
@@ -175,12 +178,15 @@ export const projectsAnimation = keyframes`
   to {
     opacity: 1;
     transform: translateX(0);
+    visibility: visible;
   }
 `;
 
-export const ProjectsSection = styled.div`
+export const ProjectsSection = styled.div<{ $isAnimated?: boolean }>`
   margin: 5rem 10rem;
   overflow: hidden;
+  visibility: hidden;
+  animation: ${(props) => props.$isAnimated && projectsAnimation} forwards 1.2s;
 
   h1 {
     text-align: end;
@@ -234,8 +240,6 @@ export const ProjectsDiv = styled.div`
 export const Project = styled.div<{
   $isAnimated?: boolean;
 }>`
-  animation: ${(props) => props.$isAnimated && projectsAnimation} 1.2s;
-
   display: flex;
   gap: 10rem;
   align-items: center;
@@ -362,14 +366,16 @@ export const divAnimation = keyframes`
 
   to {
     opacity: 1;
+    visibility: visible;
   }
 `;
 
 export const AboutMeSection = styled.div<{ $isDivAnimated?: boolean }>`
   margin: 15rem 10rem;
+  visibility: hidden;
 
   .text {
-    animation: ${(props) => props.$isDivAnimated && divAnimation} 1s;
+    animation: ${(props) => props.$isDivAnimated && divAnimation} forwards 1s;
     margin-top: 6rem;
     padding: 6rem;
     background-color: ${({ theme }) => theme.colors.brown};
@@ -378,6 +384,10 @@ export const AboutMeSection = styled.div<{ $isDivAnimated?: boolean }>`
 
   .my-services {
     margin-top: 6rem;
+  }
+
+  h1 {
+    animation: ${(props) => props.$isDivAnimated && divAnimation} forwards 1s;
   }
 
   p {
@@ -418,7 +428,6 @@ export const AboutMeSection = styled.div<{ $isDivAnimated?: boolean }>`
 
 export const gridAnimation = keyframes`
   from {
-    visibility: hidden;
     opacity: 0;
   }
 
@@ -429,12 +438,14 @@ export const gridAnimation = keyframes`
 `;
 
 export const GridMyServices = styled.div<{ $isGridsAnimated?: boolean }>`
+  visibility: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5rem;
 
   div {
-    animation: ${(props) => props.$isGridsAnimated && gridAnimation} 1.5s;
+    animation: ${(props) => props.$isGridsAnimated && gridAnimation} forwards
+      1.5s;
     background-color: ${({ theme }) => theme.colors.brown};
     border-radius: 2rem;
     display: flex;

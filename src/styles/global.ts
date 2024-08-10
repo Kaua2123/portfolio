@@ -109,4 +109,12 @@ a {
     min-height: 100vh;
 }
 
+.visible {
+    visibility: visible;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
 `;
